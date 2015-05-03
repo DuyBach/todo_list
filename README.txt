@@ -12,7 +12,7 @@ Installguide for Django(Windows)
 	
 	
 1. $ jango-admin startproject mysite
-2. % python manage.py migrate
+2. $ python manage.py migrate
 3. $ python manage.py runserver
 
 
