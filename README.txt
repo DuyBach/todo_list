@@ -17,5 +17,3 @@ Installguide for Django(Windows)
 
 
 1. $ python manage.py startapp polls
-
-test
