@@ -1,6 +1,11 @@
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
 
-class todo(models.Model):
+
+class Todo(models.Model):
     todo_text = models.CharField('todo', max_length=200)
-    todo_perc = models.IntegerField('perc', default=0, max_length=100)
+    todo_perc = models.IntegerField('perc',
+                                    default=0,
+                                    validators=[MinValueValidator(0),
+                                                MaxValueValidator(100)])
     deadline_date = models.DateTimeField('deadline')
