@@ -10,7 +10,6 @@ def index(request):
     return render(request, 'polls/index.html', context)
 
 
-
 def detail(request, todo):
     try:
         todo = Todo.objects.get(todo_text=todo)
