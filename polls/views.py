@@ -1,7 +1,7 @@
-from django.http import HttpResponse
-from django.template import RequestContext, loader
-from.models import Todo
+from django.http import Http404
 from django.shortcuts import render
+
+from.models import Todo
 
 
 def index(request):
@@ -10,5 +10,10 @@ def index(request):
     return render(request, 'polls/index.html', context)
 
 
-def detail(request, todo_id):
-    return HttpResponse("You're looking at question %s." % todo_id)
+
+def detail(request, todo):
+    try:
+        todo = Todo.objects.get(todo_text=todo)
+    except Todo.DoesNotExist:
+        raise Http404("Todo does not exist")
+    return render(request, 'polls/detail.html', {'Todo': todo})
