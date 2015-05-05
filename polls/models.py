@@ -8,4 +8,4 @@ class Todo(models.Model):
                                     default=0,
                                     validators=[MinValueValidator(0),
                                                 MaxValueValidator(100)])
-    deadline_date = models.DateTimeField('deadline')
+    deadline_date = models.DateField('deadline')
