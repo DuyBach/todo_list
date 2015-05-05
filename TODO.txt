@@ -1,0 +1,13 @@
+- Bootstrap
+- Add/Edit/Delete
+- todo_text mit whitespace?
+- html mit date
+- AUFRÄUMEN
+
+index:		/polls
+add:		/polls/add
+edit:		/polls/edit
+delete:     /polls/
+impressum:	/polls/impressum
+
+admin:		/polls/admin

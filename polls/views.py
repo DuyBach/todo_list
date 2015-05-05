@@ -1,5 +1,5 @@
 from django.http import Http404
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 
 from.models import Todo
 
@@ -11,8 +11,17 @@ def index(request):
 
 
 def detail(request, todo):
-    try:
-        todo = Todo.objects.get(todo_text=todo)
-    except Todo.DoesNotExist:
-        raise Http404("Todo does not exist")
-    return render(request, 'polls/detail.html', {'Todo': todo})
+    todo = get_object_or_404(Todo, todo_text=todo)
+    return render(request, 'polls/detail.html', {'todo': todo})
+
+
+def impressum(request):
+    return render(request, 'polls/impressum.html')
+
+
+def add(request):
+    return render(request, 'polls/add.html')
+
+
+def edit(request, todo):
+    return render(request, 'polls/edit.html')
