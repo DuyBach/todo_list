@@ -29,7 +29,6 @@ def edit(request, todo):
 from django.views.generic import ListView
 from polls.models import Todo
 from django.views import generic
-
 # Create your views here.
 
 class IndexView(generic.ListView):
@@ -50,9 +49,8 @@ class AddView(generic.CreateView):
     success_url = '/'
     fields = ['todo_text', 'deadline_date', 'todo_perc']
 
-
-
-
-
-
-
+class UpdateView(generic.UpdateView):
+    template_name = 'edit.html'
+    model = Todo
+    success_url = '/'
+    fields = ['todo_text', 'deadline_date', 'todo_perc']

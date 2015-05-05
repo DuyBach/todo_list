@@ -63,8 +63,8 @@
                          <td> {{ todo.deadline_date }}</td>
                          <td> {{ todo.todo_perc }} %</td>
                          <td> <div class="btn-group">
-                                <a href="/polls/{{ todo.todo_text }}/edit" class="btn btn-primary btn-sm">Edit</a>
-                                <a href="/polls" class="btn btn-primary btn-sm">Delete</a>
+                                <a href="{% url 'edit' todo.id %}" class="btn btn-primary btn-sm">Edit</a>
+                                <a href="/" class="btn btn-primary btn-sm">Delete</a>
                               </div>
                          </td>
                  </tr>
