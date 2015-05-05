@@ -3,7 +3,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 class Todo(models.Model):
-    todo_text = models.CharField('todo', max_length=200)
+    todo_text = models.CharField('todo', max_length=160)
     todo_perc = models.IntegerField('perc',
                                     default=0,
                                     validators=[MinValueValidator(0),

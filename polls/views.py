@@ -7,7 +7,7 @@ from.models import Todo
 def index(request):
     latest_todo_list = Todo.objects.order_by('-deadline_date')
     context = {'latest_todo_list': latest_todo_list}
-    return render(request, 'polls/index.html', context)
+    return render(request, 'index.html', context)
 
 
 def detail(request, todo):
