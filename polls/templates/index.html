@@ -60,7 +60,7 @@
             {% for todo in latest_todo_list %}
                  <tr>
                          <td> {{ todo.todo_text }}</td>
-                         <td> {{ todo.dealine_date }}</td>
+                         <td> {{ todo.deadline_date }}</td>
                          <td> {{ todo.todo_perc }} %</td>
                          <td> <div class="btn-group">
                                 <a href="/polls/{{ todo.todo_text }}/edit" class="btn btn-primary btn-sm">Edit</a>
