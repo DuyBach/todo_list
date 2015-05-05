@@ -12,16 +12,16 @@ def index(request):
 
 def detail(request, todo):
     todo = get_object_or_404(Todo, todo_text=todo)
-    return render(request, 'polls/detail.html', {'todo': todo})
+    return render(request, 'detail.html', {'todo': todo})
 
 
 def impressum(request):
-    return render(request, 'polls/impressum.html')
+    return render(request, 'impressum.html')
 
 
 def add(request):
-    return render(request, 'polls/add.html')
+    return render(request, 'add.html')
 
 
 def edit(request, todo):
-    return render(request, 'polls/edit.html')
+    return render(request, 'edit.html')

@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>TODO tracker</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,13 +29,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="index.html">TODO-List</a>
+      <a class="navbar-brand" href="/">TODO-List</a>
     </div>
     
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"> <a href="add.html">ADD TODO</a> </li>
-        <li> <a href="impressum.html">Impressum</a> </li>
+        <li> <a href="">ADD TODO</a> </li>
+        <li> <a href="impressum">Impressum</a> </li>
       </ul>
     </div>
   </div>
@@ -57,7 +59,7 @@
 </div>
 
 <div class="btn-group" role="group" aria-label="...">
-  <a href="index.html" class="btn btn-primary btn-sm">Add TODO</a>
+  <a href="index" class="btn btn-primary btn-sm">Add TODO</a>
 </div>
 
 
