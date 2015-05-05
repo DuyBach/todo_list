@@ -13,14 +13,14 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
-from django.conf.urls import include, url
+"""from django.conf.urls import include, url
 from django.contrib import admin
 from polls import views
 
 urlpatterns = [
                
     # ex: /polls/
-    url(r'^$', views.index, name='polls'),
+    url(r'^$', views.index, name='index'),
     # /polls/impressum
     url(r'^impressum/$', views.impressum, name='impressum'),
     # /polls/add
@@ -29,3 +29,13 @@ urlpatterns = [
     url(r'^(?P<todo>[A-Za-z0-9]+)/edit/$', views.detail, name='detail'),
     url(r'^admin/', include(admin.site.urls)),
 ]
+"""
+
+from django.conf.urls import patterns, url
+from polls import views
+
+urlpatterns = patterns('',
+    url(r'^$', views.IndexView.as_view(), name='index'),
+    url(r'^impressum', views.ImpressumView.as_view(), name='impressum'),
+    url(r'^add', views.AddView.as_view(), name='add'),
+)

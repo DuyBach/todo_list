@@ -41,8 +41,9 @@
   </div>
 </nav>
 
-<div class="container-fluid">
 
+<div class="container-fluid">
+<!--
 <div class="input-group">
   <span class="input-group-addon" id="basic-addon1">TODO</span>
   <input type="text" class="form-control" placeholder="Name" aria-describedby="basic-addon1">
@@ -61,7 +62,20 @@
 <div class="btn-group" role="group" aria-label="...">
   <a href="index" class="btn btn-primary btn-sm">Add TODO</a>
 </div>
+-->
 
+<h1>Add a ToDo</h1>
+<form method="post" class="form">
+    {% csrf_token %}
+    {% for field in form %}
+        <div class="form-group">
+        {{ field.errors }}
+        {{ field.label_tag }}
+        {{ field }}
+        </div>
+    {% endfor %}
+    <input type="submit" value="Add the ToDo" />
+</form>
 
 
 
