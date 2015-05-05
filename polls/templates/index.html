@@ -64,7 +64,7 @@
                          <td> {{ todo.todo_perc }} %</td>
                          <td> <div class="btn-group">
                                 <a href="{% url 'edit' todo.id %}" class="btn btn-primary btn-sm">Edit</a>
-                                <a href="/" class="btn btn-primary btn-sm">Delete</a>
+                                 <a href="{% url 'delete' todo.id %}" class="btn btn-primary btn-sm">Delete</a>
                               </div>
                          </td>
                  </tr>

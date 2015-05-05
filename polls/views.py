@@ -26,9 +26,10 @@ def add(request):
 def edit(request, todo):
     return render(request, 'edit.html') '''
 
-from django.views.generic import ListView
+from django.views.generic import ListView, DeleteView, UpdateView
 from polls.models import Todo
 from django.views import generic
+from polls.forms import MovieMixin
 # Create your views here.
 
 class IndexView(generic.ListView):
@@ -48,6 +49,13 @@ class AddView(generic.CreateView):
     model = Todo
     success_url = '/'
     fields = ['todo_text', 'deadline_date', 'todo_perc']
+
+class DeleteView(MovieMixin, DeleteView):
+    template_name = 'index.html'
+    def get_success_url(self):
+        return reverse('todo_index')
+
+
 
 class UpdateView(generic.UpdateView):
     template_name = 'edit.html'
