@@ -1,7 +1,8 @@
 from django.views.generic import ListView, DeleteView, UpdateView
 from polls.models import Todo
 from django.views import generic
-from polls.forms import MovieMixin
+from polls.forms import TodoName
+from django.core.urlresolvers import reverse_lazy
 
 
 # Create your views here.
@@ -25,15 +26,13 @@ class AddView(generic.CreateView):
     fields = ['todo_text', 'deadline_date', 'todo_perc']
 
 
-class DeleteView(MovieMixin, DeleteView):
-    template_name = 'index.html'
-
-    def get_success_url(self):
-        return reverse('todo_index')
-
-
 class UpdateView(generic.UpdateView):
     template_name = 'edit.html'
     model = Todo
     success_url = '/'
     fields = ['todo_text', 'deadline_date', 'todo_perc']
+
+
+class DeleteView(TodoName, DeleteView):
+    template_name = 'delete_comfirm.html'
+    success_url = reverse_lazy('index')

@@ -6,14 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>TODO tracker</title>
+    <title>Bootstrap 101 Template</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    
-    <!-- Custom styles for this template -->
-    <!-- <link href="{% static "site.css" %}" rel="stylesheet"> -->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,65 +20,36 @@
     <![endif]-->
   </head>
   <body>
-  
+
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href=" ">TODO-List</a>
+      <a class="navbar-brand" href="/">TODO-List</a>
     </div>
 
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li> <a href="add">ADD TODO</a> </li>
-        <li> <a href="impressum">Impressum</a> </li>
+        <li> <a href="/add">ADD TODO</a> </li>
+        <li> <a href="/impressum">Impressum</a> </li>
       </ul>
     </div>
   </div>
 </nav>
 
-
 <div class="container-fluid">
 
-<table class="table">
-         <thead>
-                 <tr>
-                         <th>TODO</th>
-                         <th>Deadline</th>
-                         <th>%</th>
-                         <th></th>
-                  </tr>
-        </thead>
-        <tbody>
-            {% for todo in latest_todo_list %}
-                 <tr>
-                         <td> {{ todo.todo_text }}</td>
-                         <td> {{ todo.deadline_date }}</td>
-                         <td> {{ todo.todo_perc }} %</td>
-                         <td> <div class="btn-group">
-                                <a href="{% url 'edit' todo.id %}" class="btn btn-primary btn-sm">Edit</a>
-                                 <a href="{% url 'delete' todo.id %}" class="btn btn-primary btn-sm">Delete</a>
-                              </div>
-                         </td>
-                 </tr>
-            {% endfor %}
-        </tbody>
-</table>
-
-
-
-
+    DELETE DONE
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-  
-  </div>
-  
+
+</div>
   </body>
 </html>
