@@ -10,11 +10,6 @@ Installguide for Django(Windows)
 5. Install Django
 	1. & pip install django
 	
-	
-1. $ jango-admin startproject mysite
-  ($ python manage.py makemigrations)
-2. $ python manage.py migrate
-3. $ python manage.py runserver
 
-
-1. $ python manage.py startapp polls
+1. $ python manage.py migrate
+2. $ python manage.py runserver
